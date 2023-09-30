@@ -1,6 +1,4 @@
-### 30 september adding mean, (calculating new centroids) and assigning points to new means and also iterations
-
-#### writing k-means for iris dataset
+#### K-Means Clustering on iris dataset
 
 #Steps
 
