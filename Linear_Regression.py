@@ -1,4 +1,3 @@
-#### fitting the line to a new dataset from --> https://towardsdatascience.com/linear-regression-and-gradient-descent-for-absolute-beginners-eef9574eadb0
 import numpy as np
 import matplotlib.pyplot as plt
 
