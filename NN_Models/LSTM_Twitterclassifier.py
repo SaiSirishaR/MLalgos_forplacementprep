@@ -95,12 +95,7 @@ class Preprocessing:
       def sequence_to_token(self, xtexts): 
           sequences = self.tokeniser.texts_to_sequences(xtexts)
           return sequence.pad_sequences(sequences, maxlen=self.max_len)
-        
-
-
-    #test_set = SentimentDataset(test_x, test_y)
-    
-    #dataloaded = DataLoader(train_set, batch_size=bs)            
+                   
 
 if __name__ == "__main__":
     
@@ -118,8 +113,6 @@ if __name__ == "__main__":
 
     train_x = data_initl.sequence_to_token(rtrain_x)
     test_x = data_initl.sequence_to_token(rtest_x)
-
-    #print("input train data is", train_x[0], np.shape(train_x))
 
     ## Hyperparameters
     
