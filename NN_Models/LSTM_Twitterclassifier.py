@@ -45,12 +45,9 @@ class LSTMclassifier(nn.Module):
         
            embedded = self.embedding(inp)
            out, (ht,ct) = self.lstm(embedded, (h0,c0)) 
-           ##print("outhspe of lstm layer", np.shape(out))
            out = self.fc1(out[:,-1,:])
-           ##print("outhspe of fc1 layer", np.shape(out))
            out = self.dropout(out) 
            out = torch.sigmoid(self.fc2(out))
-           ##print("outhspe of sigmoid", np.shape(out))
            return out
     
     
@@ -69,8 +66,6 @@ class SentimentDataset(Dataset):
           return len(self.x)
         
       def __getitem__(self, idx):
-          #print("am inside dataset function")
-          #print("x index is", self.x[idx])
           return self.x[idx], self.y[idx]
         
         
@@ -109,7 +104,7 @@ class Preprocessing:
 
 if __name__ == "__main__":
     
-    ### Data initialisation and preprocessing
+    ### Data initialization and preprocessing
 
     data_initl= Preprocessing(max_len = 54, max_num_words = 1000)
     data_initl.load_data()
@@ -155,15 +150,9 @@ if __name__ == "__main__":
     ### Training
     for epoch in range(epochs):
         for x_inp, y_label in dataloaded:
-
-          # x_inp = x_inp.type(torch.LongTensor)
            x = torch.tensor(x_inp, dtype=torch.long)
-           ##print("input is", x) 
-           #y = y_label.type(torch.FloatTensor)
            y = torch.tensor(y_label, dtype=torch.float)
-          ## print("output is", np.shape(y))
            pred_y = model(x)
-          ## print("pred shape is", np.shape(pred_y.view(-1)))
    
         ## loss calculation and optimisation
         
