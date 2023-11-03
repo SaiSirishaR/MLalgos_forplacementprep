@@ -62,7 +62,6 @@ class SentimentDataset(Dataset):
           self.y = y  
             
       def __len__(self):
-          #print("len is", len(self.x))
           return len(self.x)
         
       def __getitem__(self, idx):
@@ -133,7 +132,6 @@ if __name__ == "__main__":
     dataloaded = DataLoader(train_set, batch_size=bs, shuffle=True)
     test_dataloaded = DataLoader(test_set)
     
-    #print("train set is what", dataloaded)
     
     ### calling model, error function and optimisation
     model = LSTMclassifier(input_size, hidden_size, output_size, embed_size, num_layers)
