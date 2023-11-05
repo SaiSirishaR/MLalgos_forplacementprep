@@ -48,12 +48,9 @@ class LSTMclassifier(nn.Module):
         
            embedded = self.embedding(inp)
            out, (ht,ct) = self.lstm(embedded, (h0,c0)) 
-           ##print("outhspe of lstm layer", np.shape(out))
            out = self.fc1(out[:,-1,:])
-           ##print("outhspe of fc1 layer", np.shape(out))
            out = self.dropout(out) 
            out = torch.sigmoid(self.fc2(out))
-           ##print("outhspe of sigmoid", np.shape(out))
            return out
     
    
