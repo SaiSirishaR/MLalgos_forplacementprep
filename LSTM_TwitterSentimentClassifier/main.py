@@ -1,6 +1,4 @@
-### Adding evaluation
-
-####### Coding LSTM for Twitter classification
+####### LSTM for Twitter classification
 
 
 import pandas as pd
