@@ -27,12 +27,9 @@ class SentimentDataset(Dataset):
           self.y = y  
             
       def __len__(self):
-          #print("len is", len(self.x))
           return len(self.x)
         
       def __getitem__(self, idx):
-          #print("am inside dataset function")
-          #print("x index is", self.x[idx])
           return self.x[idx], self.y[idx]
         
         
